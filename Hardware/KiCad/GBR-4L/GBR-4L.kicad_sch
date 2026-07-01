@@ -2,9 +2,399 @@
 	(version 20260306)
 	(generator "eeschema")
 	(generator_version "10.0")
-	(uuid b8df0061-3e6e-4dbf-82d0-e6a9fc3e80ad)
+	(uuid "b8df0061-3e6e-4dbf-82d0-e6a9fc3e80ad")
 	(paper "A4")
 	(lib_symbols)
+	(sheet
+		(at 59.69 48.26)
+		(size 26.67 16.51)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "14bbbf19-cf64-4496-8dbd-816a85789058")
+		(property "Sheetname" "SIM"
+			(at 59.69 47.5484 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "SIM.kicad_sch"
+			(at 59.69 65.3546 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Field2" ""
+			(at 59.69 48.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "GBR-4L"
+				(path "/b8df0061-3e6e-4dbf-82d0-e6a9fc3e80ad"
+					(page "8")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 19.05 72.39)
+		(size 29.21 17.78)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "2d0a6060-78d8-49cc-9c6d-9d05205182b9")
+		(property "Sheetname" "LTE_SLOT2"
+			(at 19.05 71.6784 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "LTE_SLOT2.kicad_sch"
+			(at 19.05 90.7546 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "GBR-4L"
+				(path "/b8df0061-3e6e-4dbf-82d0-e6a9fc3e80ad"
+					(page "4")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 60.96 73.66)
+		(size 25.4 17.78)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "55a6f541-be07-4797-a220-9c801fbf4cbd")
+		(property "Sheetname" "LED_RESET"
+			(at 60.96 72.9484 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "LED_RESET.kicad_sch"
+			(at 60.96 92.0246 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "GBR-4L"
+				(path "/b8df0061-3e6e-4dbf-82d0-e6a9fc3e80ad"
+					(page "9")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 19.05 48.26)
+		(size 29.21 17.78)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "93336342-a3ee-4365-8b2c-ff4a5de0e504")
+		(property "Sheetname" "LTE_SLOT1"
+			(at 19.05 47.5484 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "LTE_SLOT1.kicad_sch"
+			(at 19.05 66.6246 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "GBR-4L"
+				(path "/b8df0061-3e6e-4dbf-82d0-e6a9fc3e80ad"
+					(page "3")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 19.05 19.05)
+		(size 29.21 22.86)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "a941d5b7-115f-4027-93e2-d58bcfbdbffa")
+		(property "Sheetname" "Power"
+			(at 19.05 18.3384 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Power_sch.kicad_sch"
+			(at 19.05 42.4946 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "GBR-4L"
+				(path "/b8df0061-3e6e-4dbf-82d0-e6a9fc3e80ad"
+					(page "2")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 58.42 19.05)
+		(size 27.94 22.86)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "b3a3ba67-58df-4425-9be2-32245990d5b3")
+		(property "Sheetname" "USB"
+			(at 58.42 18.3384 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "USB.kicad_sch"
+			(at 58.42 42.4946 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "GBR-4L"
+				(path "/b8df0061-3e6e-4dbf-82d0-e6a9fc3e80ad"
+					(page "7")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 19.05 96.52)
+		(size 29.21 19.05)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "c885ed0c-303c-466f-89ce-f3c1e68849d5")
+		(property "Sheetname" "LTE_SLOT3"
+			(at 19.05 95.8084 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "LTE_SLOT3.kicad_sch"
+			(at 19.05 116.1546 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Field2" ""
+			(at 19.05 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "GBR-4L"
+				(path "/b8df0061-3e6e-4dbf-82d0-e6a9fc3e80ad"
+					(page "5")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 19.05 120.65)
+		(size 29.21 20.32)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "e9cc8b59-e85d-4d09-8223-958362d8566b")
+		(property "Sheetname" "LTE_SLOT4"
+			(at 19.05 119.9384 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "LTE_SLOT4.kicad_sch"
+			(at 19.05 141.5546 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "GBR-4L"
+				(path "/b8df0061-3e6e-4dbf-82d0-e6a9fc3e80ad"
+					(page "6")
+				)
+			)
+		)
+	)
 	(sheet_instances
 		(path "/"
 			(page "1")
