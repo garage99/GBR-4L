@@ -6,7 +6,7 @@ SELECTED,3.3 V buck regulator,5,Texas Instruments,TPS56339DDCR,3 A synchronous s
 CANDIDATE,USB ESD,1,STMicroelectronics,USBLC6-2SC6,Low-capacitance USB 2.0 ESD protection,SOT-23-6,Protect upstream D+ and D-
 CANDIDATE,SIM ESD,4,STMicroelectronics,ESDA6V1-5SC6,Five-line ESD protection array,SOT-23-6,Confirm capacitance against SIM interface
 CANDIDATE,USB Type-C receptacle,1,GCT,USB4105-GF-A,USB 2.0 Type-C receptacle,16-pin SMT,Verify JLC assembly support and shell tabs
-CANDIDATE,nano-SIM socket,4,TE Connectivity,2452808-1,Front-entry push-pull nano-SIM socket with card detect,SMT 1.37 mm height,Detect switch is required by the EM7565 SIM_DETECT interface; verify availability and footprint
+SELECTED,nano-SIM socket,4,TE Connectivity,2452808-1,Front-entry push-pull nano-SIM socket with card detect,SMT 1.37 mm height,Project footprint captured from C-2452808 Rev C1; switch closes to C5/GND when a card is inserted
 CANDIDATE,Input TVS,1,Littelfuse,SMBJ15A,15 V unidirectional TVS,SMB,Recheck standoff voltage for selected 12 V adapter
 CANDIDATE,Input fuse,1,,5 A time-delay blade fuse,Replaceable input overcurrent protection,ATO blade holder,Freeze fuse and holder after adapter and load-step testing
 CANDIDATE,CC resistors,2,,5.1k 1%,USB Type-C Rd resistor,0603,One each on CC1 and CC2

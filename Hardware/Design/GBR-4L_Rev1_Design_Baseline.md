@@ -106,6 +106,8 @@ Connectivity 2452808-1.
 - Keep `UIM_DATA` and `UIM_CLK` capacitance low.
 - Keep total UIM power and ground path impedance below 1 Ohm.
 - Route each SIM only to its associated modem; do not multiplex in Rev 1.
+- The 2452808-1 detect contact is open without a card and closes to its C5/GND
+  contact when a card is inserted.
 
 ## 4. Power budget
 

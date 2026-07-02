@@ -39,7 +39,9 @@ Any layer transition for USB requires adjacent ground stitching vias.
 ## Footprints required before electrical placement
 
 - Exact M.2 socket height and manufacturer footprint.
-- TE Connectivity 2452808-1 nano-SIM footprint from its controlled drawing.
+- TE Connectivity 2452808-1 nano-SIM footprint is captured from customer
+  drawing C-2452808 Rev C1; verify the first incoming part against the land
+  pattern before assembly release.
 - Final 12 V input connector, blade-fuse holder, PMOS, and inductor choices.
 - Final Type-C receptacle footprint and shell-hole geometry.
 - Crystal load-capacitance and package selection.
