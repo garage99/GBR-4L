@@ -8,6 +8,9 @@ CANDIDATE,SIM ESD,4,STMicroelectronics,ESDA6V1-5SC6,Five-line ESD protection arr
 CANDIDATE,USB Type-C receptacle,1,GCT,USB4105-GF-A,USB 2.0 Type-C receptacle,16-pin SMT,Verify JLC assembly support and shell tabs
 CANDIDATE,nano-SIM socket,4,TE Connectivity,2452808-1,Front-entry push-pull nano-SIM socket with card detect,SMT 1.37 mm height,Detect switch is required by the EM7565 SIM_DETECT interface; verify availability and footprint
 CANDIDATE,Input TVS,1,Littelfuse,SMBJ15A,15 V unidirectional TVS,SMB,Recheck standoff voltage for selected 12 V adapter
-CANDIDATE,Input fuse,1,Littelfuse,1206L500SLYR,5 A resettable fuse,1206,Verify hold current thermally; cartridge fuse may be preferable
+CANDIDATE,Input fuse,1,,5 A time-delay blade fuse,Replaceable input overcurrent protection,ATO blade holder,Freeze fuse and holder after adapter and load-step testing
 CANDIDATE,CC resistors,2,,5.1k 1%,USB Type-C Rd resistor,0603,One each on CC1 and CC2
 CANDIDATE,Hub crystal,1,,24 MHz crystal,3225,Select from USB2514B approved load parameters
+CANDIDATE,Status LED buffer,4,onsemi,MMBT3906LT1G,PNP transistor for active-low modem status,SOT-23,Verify JLCPCB assembly stock or approve equivalent
+CANDIDATE,Local control switch,8,E-Switch,TL3305AF160QG,Normally-open tactile switch,SMD,Four reset and four RF-disable controls; verify actuator height
+CANDIDATE,Modem status LED,4,,Green LED,Per-modem WWAN status indicator,0603,Select brightness and current at prototype review

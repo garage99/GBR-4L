@@ -155,6 +155,6 @@ Before Gerber release:
 
 - Semtech/Sierra Wireless, AirPrime EM7565 Product Technical Specification.
 - Microchip, USB251xB/xBi USB 2.0 Hi-Speed Hub Controller Data Sheet.
-- Texas Instruments, TPS54394 3 A Dual-Channel Synchronous Step-Down Switcher
+- Texas Instruments, TPS56339 3 A Synchronous Step-Down Converter
   Data Sheet.
 - USB Type-C Cable and Connector Specification.
