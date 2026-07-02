@@ -37,9 +37,11 @@ Nominal input is 12 V DC. Design input range is 10.8 V to 13.2 V.
   |
   +-- input fuse / reverse-polarity protection / TVS
   |
-  +-- dual 3 A buck A --> MODEM_1_3V3, MODEM_2_3V3
-  +-- dual 3 A buck B --> MODEM_3_3V3, MODEM_4_3V3
-  +-- auxiliary buck --> SYS_3V3 (USB hub, indicators, control)
+  +-- 3 A buck 1 --> MODEM_1_3V3
+  +-- 3 A buck 2 --> MODEM_2_3V3
+  +-- 3 A buck 3 --> MODEM_3_3V3
+  +-- 3 A buck 4 --> MODEM_4_3V3
+  +-- 3 A buck 5 --> SYS_3V3 (USB hub, indicators, control)
 ```
 
 Each modem supply:
@@ -51,11 +53,10 @@ Each modem supply:
 - includes local bulk and high-frequency decoupling at the M.2 socket;
 - exposes voltage, ground, enable, and power-good test points.
 
-Two TPS54394 dual 3 A synchronous buck regulators are the initial choice. Each
-channel feeds only one modem and its `EN` pin provides hard power control.
-TPS22990 load-switch footprints are therefore not populated in the baseline;
-they remain a fallback if regulator sequencing or discharge behavior proves
-unsuitable during prototype testing.
+Five TPS56339 3 A synchronous buck regulators are the initial choice. Four
+identical channels feed one modem each and the fifth feeds system logic. The
+device has internal compensation and a 5 ms soft-start. Each modem channel uses
+its `EN` pin for independent hard power control.
 
 The system must not draw modem operating power from USB VBUS. VBUS is used only
 for attach detection and hub requirements.
