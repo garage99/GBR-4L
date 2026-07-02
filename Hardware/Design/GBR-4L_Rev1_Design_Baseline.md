@@ -95,8 +95,9 @@ an optional controller board.
 
 ### 3.4 SIM
 
-One front-entry push-pull nano-SIM socket is assigned to the primary SIM interface of each
-EM7565.
+One front-entry push-pull nano-SIM socket with a card-detect switch is assigned
+to the primary SIM interface of each EM7565. The baseline candidate is TE
+Connectivity 2452808-1.
 
 - Protect `UIM_PWR`, `UIM_DATA`, `UIM_CLK`, and `UIM_RESET` with a
   low-capacitance SIM ESD array placed at the socket.

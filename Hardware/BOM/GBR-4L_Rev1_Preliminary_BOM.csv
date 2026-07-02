@@ -7,7 +7,7 @@ CANDIDATE,System buck regulator,1,Diodes Incorporated,AP63203WU-7,2 A synchronou
 CANDIDATE,USB ESD,1,STMicroelectronics,USBLC6-2SC6,Low-capacitance USB 2.0 ESD protection,SOT-23-6,Protect upstream D+ and D-
 CANDIDATE,SIM ESD,4,STMicroelectronics,ESDA6V1-5SC6,Five-line ESD protection array,SOT-23-6,Confirm capacitance against SIM interface
 CANDIDATE,USB Type-C receptacle,1,GCT,USB4105-GF-A,USB 2.0 Type-C receptacle,16-pin SMT,Verify JLC assembly support and shell tabs
-CANDIDATE,nano-SIM socket,4,Molex,104224-0820,Front-entry push-pull nano-SIM socket,SMT 1.11 mm height,No detect switch; verify availability and footprint
+CANDIDATE,nano-SIM socket,4,TE Connectivity,2452808-1,Front-entry push-pull nano-SIM socket with card detect,SMT 1.37 mm height,Detect switch is required by the EM7565 SIM_DETECT interface; verify availability and footprint
 CANDIDATE,Input TVS,1,Littelfuse,SMBJ15A,15 V unidirectional TVS,SMB,Recheck standoff voltage for selected 12 V adapter
 CANDIDATE,Input fuse,1,Littelfuse,1206L500SLYR,5 A resettable fuse,1206,Verify hold current thermally; cartridge fuse may be preferable
 CANDIDATE,CC resistors,2,,5.1k 1%,USB Type-C Rd resistor,0603,One each on CC1 and CC2
