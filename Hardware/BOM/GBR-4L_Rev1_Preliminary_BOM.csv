@@ -1,0 +1,14 @@
+Status,Functional_Block,Qty,Manufacturer,Manufacturer_Part_Number,Description,Package_or_Form,Selection_Notes
+SELECTED,LTE modem,4,Semtech / Sierra Wireless,EM7565,Cat-12 LTE modem,M.2 Key B 3042,Exact regional SKU and firmware must be confirmed before purchase
+CANDIDATE,M.2 socket,4,TE Connectivity,2199230-1,M.2 Key B socket,67-contact SMT 4.2 mm height,Verify height and availability; 2199230-3/-5 differ in gold thickness
+SELECTED,USB hub,1,Microchip,USB2514B-I/M2,Four-port USB 2.0 High-Speed hub controller,SQFN-36,Production device; self-powered configuration
+SELECTED,Modem buck regulator,2,Texas Instruments,TPS54394PWPR,Dual 3 A synchronous step-down regulator,HTSSOP-16 PowerPAD,One channel per modem; 12 V to 3.3 V
+CANDIDATE,System buck regulator,1,Diodes Incorporated,AP63203WU-7,2 A synchronous buck regulator,TSOT26,12 V to 3.3 V system rail; validate compensation and stock
+CANDIDATE,USB ESD,1,STMicroelectronics,USBLC6-2SC6,Low-capacitance USB 2.0 ESD protection,SOT-23-6,Protect upstream D+ and D-
+CANDIDATE,SIM ESD,4,STMicroelectronics,ESDA6V1-5SC6,Five-line ESD protection array,SOT-23-6,Confirm capacitance against SIM interface
+CANDIDATE,USB Type-C receptacle,1,GCT,USB4105-GF-A,USB 2.0 Type-C receptacle,16-pin SMT,Verify JLC assembly support and shell tabs
+CANDIDATE,nano-SIM socket,4,Molex,104224-0820,Front-entry push-pull nano-SIM socket,SMT 1.11 mm height,No detect switch; verify availability and footprint
+CANDIDATE,Input TVS,1,Littelfuse,SMBJ15A,15 V unidirectional TVS,SMB,Recheck standoff voltage for selected 12 V adapter
+CANDIDATE,Input fuse,1,Littelfuse,1206L500SLYR,5 A resettable fuse,1206,Verify hold current thermally; cartridge fuse may be preferable
+CANDIDATE,CC resistors,2,,5.1k 1%,USB Type-C Rd resistor,0603,One each on CC1 and CC2
+CANDIDATE,Hub crystal,1,,24 MHz crystal,3225,Select from USB2514B approved load parameters
