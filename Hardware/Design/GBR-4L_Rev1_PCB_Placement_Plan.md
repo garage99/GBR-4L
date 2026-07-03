@@ -19,6 +19,16 @@ Any layer transition for USB requires adjacent ground stitching vias.
 board edge with 0.25 mm local clearance. Ground stitching and return-path vias
 will be added during detailed placement and routing.
 
+`In2.Cu` now contains six isolated filled regions:
+
+- `+12V_PROTECTED` and `+3V3_SYS` in the upper half;
+- `+3V3_M1` through `+3V3_M4` in four independent modem columns.
+
+Adjacent regions have a 1.0 mm nominal boundary gap and 0.30 mm zone
+clearance. These regions are intentionally retained before vias are added;
+each must be tied to its regulator and load with adequately sized via arrays
+during detailed power placement.
+
 ## Provisional net classes
 
 - `USB2_HS_PROVISIONAL`: 0.20 mm width / 0.20 mm pair gap. Replace these
