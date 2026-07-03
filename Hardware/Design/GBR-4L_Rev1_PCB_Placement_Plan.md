@@ -61,8 +61,14 @@ rails should use pours where practical and must be validated thermally.
 - Crystal load-capacitance and package selection.
 
 The current PCB contains the layer stack, outline, mounting holes, all 184
-schematic footprints, and a collision-free packing arrangement. This is an
-inventory/fit check, not final functional placement.
+schematic footprints, and all 287 schematic nets. Four M.2 sockets are anchored
+on a common line with 30 mm x 42 mm module envelopes reserved below them. The
+12 V input and USB Type-C receptacle are anchored at opposite board edges. All
+remaining parts are collision-free in the upper component band.
+
+This is the functional anchor baseline, not the final local placement. Buck
+converter loops, hub passives, SIM protection, modem decoupling, buttons, and
+LEDs must next be pulled tightly around their associated primary components.
 
 The two 0.65 mm USB4105 locating holes are presently shown on `F.Fab` rather
 than emitted as NPTH holes. KiCad 10.0.4 CLI aborts during DRC when those NPTH
