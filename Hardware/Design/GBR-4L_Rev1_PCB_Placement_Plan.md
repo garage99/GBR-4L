@@ -36,24 +36,37 @@ Any layer transition for USB requires adjacent ground stitching vias.
 6. Keep each buck switch-node copper compact; do not route it on an inner
    layer.
 
-## Footprints required before electrical placement
+## Footprint status
 
-- Exact M.2 socket height and manufacturer footprint.
+- TE Connectivity 2199230-1 M.2 Key B footprint is captured from customer
+  drawing C-2199230 Rev B4.
 - TE Connectivity 2452808-1 nano-SIM footprint is captured from customer
   drawing C-2452808 Rev C1; verify the first incoming part against the land
   pattern before assembly release.
+- GCT USB4105 signal and shell tails are captured from the manufacturer
+  drawing with the four physically merged contact pairs represented as single
+  pads.
 - Final 12 V input connector, blade-fuse holder, PMOS, and inductor choices.
-- Final Type-C receptacle footprint and shell-hole geometry.
 - Crystal load-capacitance and package selection.
 
-The current PCB contains only the layer stack, outline, mounting holes, and
-placement annotations. Schematic-to-PCB footprint import and routing must wait
-until the items above are frozen; placeholder connector footprints would make
-the mechanical design misleading.
+The current PCB contains the layer stack, outline, mounting holes, all 184
+schematic footprints, and a collision-free packing arrangement. This is an
+inventory/fit check, not final functional placement.
+
+The two 0.65 mm USB4105 locating holes are presently shown on `F.Fab` rather
+than emitted as NPTH holes. KiCad 10.0.4 CLI aborts during DRC when those NPTH
+holes are combined with the adjacent fine-pitch pads. They must be restored as
+NPTH holes and verified in a newer KiCad release before fabrication output.
+
+Electrical nets remain authoritative in the schematic. Automated `pcbnew`
+net creation produced an invalid CLI connectivity state, so the committed PCB
+intentionally contains footprints without imported nets. Use KiCad's **Update
+PCB from Schematic** command before functional placement or routing.
 
 ## Placement review gate
 
-- Import all schematic footprints and verify zero missing assignments.
+- Run **Update PCB from Schematic** and verify all 287 schematic nets.
+- Verify zero missing footprint assignments.
 - Check M.2 module and antenna-cable keep-outs in 3D.
 - Confirm SIM insertion direction and finger clearance.
 - Confirm all edge controls against the enclosure.
