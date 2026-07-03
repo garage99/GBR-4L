@@ -15,6 +15,17 @@ Board: 160 mm x 100 mm, 1.6 mm, four copper layers
 Do not split the ground plane below USB, SIM, clock, or modem control traces.
 Any layer transition for USB requires adjacent ground stitching vias.
 
+## Provisional net classes
+
+- `USB2_HS_PROVISIONAL`: 0.20 mm width / 0.20 mm pair gap. Replace these
+  provisional values with the 90-ohm geometry calculated from the selected
+  JLCPCB stack-up before routing.
+- `MODEM_3V3_POWER`: 1.00 mm track, 1.20/0.60 mm via.
+- `INPUT_12V_POWER`: 1.50 mm track, 1.50/0.80 mm via.
+
+These are routing defaults, not proof of current capacity or impedance. Power
+rails should use pours where practical and must be validated thermally.
+
 ## Mechanical baseline
 
 - Rectangular 160 mm x 100 mm Edge.Cuts outline.
