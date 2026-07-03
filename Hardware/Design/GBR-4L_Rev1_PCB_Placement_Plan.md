@@ -15,6 +15,10 @@ Board: 160 mm x 100 mm, 1.6 mm, four copper layers
 Do not split the ground plane below USB, SIM, clock, or modem control traces.
 Any layer transition for USB requires adjacent ground stitching vias.
 
+`In1.Cu` now contains the filled `IN1_SOLID_GND` zone, inset 0.5 mm from the
+board edge with 0.25 mm local clearance. Ground stitching and return-path vias
+will be added during detailed placement and routing.
+
 ## Provisional net classes
 
 - `USB2_HS_PROVISIONAL`: 0.20 mm width / 0.20 mm pair gap. Replace these
