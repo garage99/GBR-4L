@@ -7,16 +7,21 @@ Board: 160 mm x 100 mm, 1.6 mm, four copper layers
 
 | Layer | Primary use |
 |---|---|
-| F.Cu | Components, USB differential pairs, short local power routing |
+| F.Cu | Components, USB differential pairs, short local power routing, GND pour |
 | In1.Cu | Uninterrupted ground plane |
 | In2.Cu | 12 V and five 3.3 V power regions |
-| B.Cu | Low-speed control and secondary power routing |
+| B.Cu | Low-speed control, secondary power routing, GND pour |
 
 Do not split the ground plane below USB, SIM, clock, or modem control traces.
 Any layer transition for USB requires adjacent ground stitching vias.
 
 `In1.Cu` now contains the filled `IN1_SOLID_GND` zone, inset 0.5 mm from the
 board edge with 0.25 mm local clearance.
+
+`F.Cu` and `B.Cu` also contain filled GND pours inset 0.5 mm from the board
+edge. They use 0.25 mm local clearance, 0.30 mm thermal gaps and spokes, and
+remove isolated copper islands below 5 mm². The 44 GND stitching vias connect
+both outer pours to the uninterrupted `In1.Cu` reference plane.
 
 `In2.Cu` now contains six isolated filled regions:
 
@@ -34,8 +39,8 @@ clearance.
   four-via 1.20/0.60 mm array in their respective upper power regions.
 - The ground plane has 44 stitching vias around the board perimeter and beside
   the four modem power arrays: 0.60 mm diameter with a 0.30 mm finished drill.
-- All 68 vias are through vias from `F.Cu` to `B.Cu`; all seven inner-plane
-  zones have been refilled after placement.
+- All 68 vias are through vias from `F.Cu` to `B.Cu`; all nine copper zones
+  have been refilled after placement.
 
 These are plane-access points, not completed load connections. The power
 arrays must be tied to their regulator and M.2 power pads with short, wide
