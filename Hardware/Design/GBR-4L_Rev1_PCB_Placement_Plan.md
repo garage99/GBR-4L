@@ -30,9 +30,11 @@ clearance.
 
 - Each modem rail (`+3V3_M1` through `+3V3_M4`) has a four-via connection
   array below its M.2 socket: 1.20 mm diameter with a 0.60 mm finished drill.
+- `+12V_PROTECTED` has a four-via 1.50/0.80 mm array and `+3V3_SYS` has a
+  four-via 1.20/0.60 mm array in their respective upper power regions.
 - The ground plane has 44 stitching vias around the board perimeter and beside
   the four modem power arrays: 0.60 mm diameter with a 0.30 mm finished drill.
-- All 60 vias are through vias from `F.Cu` to `B.Cu`; all seven inner-plane
+- All 68 vias are through vias from `F.Cu` to `B.Cu`; all seven inner-plane
   zones have been refilled after placement.
 
 These are plane-access points, not completed load connections. The power
