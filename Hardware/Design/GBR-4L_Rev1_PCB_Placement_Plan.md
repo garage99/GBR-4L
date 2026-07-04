@@ -40,6 +40,12 @@ arrays must be tied to their regulator and M.2 power pads with short, wide
 copper during detailed routing. Add local ground return vias beside USB layer
 transitions and decoupling capacitors when their final positions are frozen.
 
+The five 3.3 V contacts on each M.2 socket are now fanned out on `F.Cu` to its
+four-via power array. The contact exits use 0.25 mm neck-downs, merge through
+0.50 mm branches, and transition to 1.00 mm trunks. This completes the local
+socket-to-plane connection for `+3V3_M1` through `+3V3_M4`; the regulator side
+of each power region remains to be routed.
+
 ## Provisional net classes
 
 - `USB2_HS_PROVISIONAL`: 0.20 mm width / 0.20 mm pair gap. Replace these
