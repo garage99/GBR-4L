@@ -1,6 +1,6 @@
 # GBR-4L Rev 1 PCB placement plan
 
-Status: mechanical baseline before footprint freeze  
+Status: functional placement and plane baseline before detailed routing
 Board: 160 mm x 100 mm, 1.6 mm, four copper layers
 
 ## Layer intent
@@ -16,8 +16,7 @@ Do not split the ground plane below USB, SIM, clock, or modem control traces.
 Any layer transition for USB requires adjacent ground stitching vias.
 
 `In1.Cu` now contains the filled `IN1_SOLID_GND` zone, inset 0.5 mm from the
-board edge with 0.25 mm local clearance. Ground stitching and return-path vias
-will be added during detailed placement and routing.
+board edge with 0.25 mm local clearance.
 
 `In2.Cu` now contains six isolated filled regions:
 
@@ -25,9 +24,21 @@ will be added during detailed placement and routing.
 - `+3V3_M1` through `+3V3_M4` in four independent modem columns.
 
 Adjacent regions have a 1.0 mm nominal boundary gap and 0.30 mm zone
-clearance. These regions are intentionally retained before vias are added;
-each must be tied to its regulator and load with adequately sized via arrays
-during detailed power placement.
+clearance.
+
+## Via baseline
+
+- Each modem rail (`+3V3_M1` through `+3V3_M4`) has a four-via connection
+  array below its M.2 socket: 1.20 mm diameter with a 0.60 mm finished drill.
+- The ground plane has 44 stitching vias around the board perimeter and beside
+  the four modem power arrays: 0.60 mm diameter with a 0.30 mm finished drill.
+- All 60 vias are through vias from `F.Cu` to `B.Cu`; all seven inner-plane
+  zones have been refilled after placement.
+
+These are plane-access points, not completed load connections. The power
+arrays must be tied to their regulator and M.2 power pads with short, wide
+copper during detailed routing. Add local ground return vias beside USB layer
+transitions and decoupling capacitors when their final positions are frozen.
 
 ## Provisional net classes
 
@@ -89,14 +100,14 @@ than emitted as NPTH holes. KiCad 10.0.4 CLI aborts during DRC when those NPTH
 holes are combined with the adjacent fine-pitch pads. They must be restored as
 NPTH holes and verified in a newer KiCad release before fabrication output.
 
-Electrical nets remain authoritative in the schematic. Automated `pcbnew`
-net creation produced an invalid CLI connectivity state, so the committed PCB
-intentionally contains footprints without imported nets. Use KiCad's **Update
-PCB from Schematic** command before functional placement or routing.
+Electrical nets remain authoritative in the schematic. The current PCB has
+all 287 schematic nets imported through KiCad's **Update PCB from Schematic**
+workflow.
 
 ## Placement review gate
 
-- Run **Update PCB from Schematic** and verify all 287 schematic nets.
+- Verify the imported set remains at 287 schematic nets after any schematic
+  change and **Update PCB from Schematic** operation.
 - Verify zero missing footprint assignments.
 - Check M.2 module and antenna-cable keep-outs in 3D.
 - Confirm SIM insertion direction and finger clearance.
