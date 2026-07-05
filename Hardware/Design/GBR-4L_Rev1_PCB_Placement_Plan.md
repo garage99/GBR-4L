@@ -37,7 +37,7 @@ clearance.
   array below its M.2 socket: 1.20 mm diameter with a 0.60 mm finished drill.
 - `+12V_PROTECTED` has a four-via 1.50/0.80 mm array and `+3V3_SYS` has a
   four-via 1.20/0.60 mm array in their respective upper power regions.
-- The ground plane has 49 stitching vias around the board perimeter, beside
+- The ground plane has 51 stitching vias around the board perimeter, beside
   the four modem power arrays, and at both Type-C GND contacts: 0.60 mm
   diameter with a 0.30 mm finished drill. This count includes a dedicated via
   and short 0.50 mm ground connection at the USB ESD clamp plus individual
@@ -45,7 +45,7 @@ clearance.
 - Three additional 0.60/0.30 mm vias connect both Type-C shell ends and the
   R3/C1 termination node between the outer layers on `USB_SHIELD`. This net
   remains intentionally separate from digital GND.
-- All 76 vias are through vias from `F.Cu` to `B.Cu`; all nine copper zones
+- All 78 vias are through vias from `F.Cu` to `B.Cu`; all nine copper zones
   have been refilled after placement.
 
 These are plane-access points, not completed load connections. The power
@@ -118,6 +118,10 @@ USB entry corridor.
 The 1 MΩ / 4.7 nF shield termination (`R3`/`C1`) is placed below the Type-C
 receptacle. Both parts have individual GND vias, while their `USB_SHIELD` pads
 join at a dedicated via and connect to the shell on `B.Cu`.
+
+The two 5.1 kΩ Type-C pull-downs (`R1`/`R2`) are grouped below the connector
+and each has an individual GND via. Their `USB_CC1` and `USB_CC2` sides remain
+to be routed to the receptacle after the USB entry corridor is finalized.
 
 This is the functional anchor baseline, not the final local placement. Buck
 converter loops, hub passives, SIM protection, modem decoupling, buttons, and
