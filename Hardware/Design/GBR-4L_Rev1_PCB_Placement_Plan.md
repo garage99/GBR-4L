@@ -37,14 +37,15 @@ clearance.
   array below its M.2 socket: 1.20 mm diameter with a 0.60 mm finished drill.
 - `+12V_PROTECTED` has a four-via 1.50/0.80 mm array and `+3V3_SYS` has a
   four-via 1.20/0.60 mm array in their respective upper power regions.
-- The ground plane has 47 stitching vias around the board perimeter, beside
+- The ground plane has 49 stitching vias around the board perimeter, beside
   the four modem power arrays, and at both Type-C GND contacts: 0.60 mm
   diameter with a 0.30 mm finished drill. This count includes a dedicated via
-  and short 0.50 mm ground connection at the USB ESD clamp.
-- Two additional 0.60/0.30 mm vias connect both Type-C shell ends between the
-  outer layers on `USB_SHIELD`. This net remains intentionally separate from
-  digital GND and is terminated by R3/C1.
-- All 73 vias are through vias from `F.Cu` to `B.Cu`; all nine copper zones
+  and short 0.50 mm ground connection at the USB ESD clamp plus individual
+  returns for the shield termination parts.
+- Three additional 0.60/0.30 mm vias connect both Type-C shell ends and the
+  R3/C1 termination node between the outer layers on `USB_SHIELD`. This net
+  remains intentionally separate from digital GND.
+- All 76 vias are through vias from `F.Cu` to `B.Cu`; all nine copper zones
   have been refilled after placement.
 
 These are plane-access points, not completed load connections. The power
@@ -113,6 +114,10 @@ The USBLC6-2SC6 ESD clamp (`U1`) is now placed directly behind the Type-C
 receptacle. Its ground pin has a dedicated plane via. The `+3V3_SYS` inductor
 `L801` was relocated within the same upper power region to open this protected
 USB entry corridor.
+
+The 1 MΩ / 4.7 nF shield termination (`R3`/`C1`) is placed below the Type-C
+receptacle. Both parts have individual GND vias, while their `USB_SHIELD` pads
+join at a dedicated via and connect to the shell on `B.Cu`.
 
 This is the functional anchor baseline, not the final local placement. Buck
 converter loops, hub passives, SIM protection, modem decoupling, buttons, and
