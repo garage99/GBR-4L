@@ -37,9 +37,13 @@ clearance.
   array below its M.2 socket: 1.20 mm diameter with a 0.60 mm finished drill.
 - `+12V_PROTECTED` has a four-via 1.50/0.80 mm array and `+3V3_SYS` has a
   four-via 1.20/0.60 mm array in their respective upper power regions.
-- The ground plane has 44 stitching vias around the board perimeter and beside
-  the four modem power arrays: 0.60 mm diameter with a 0.30 mm finished drill.
-- All 68 vias are through vias from `F.Cu` to `B.Cu`; all nine copper zones
+- The ground plane has 46 stitching vias around the board perimeter, beside
+  the four modem power arrays, and at both Type-C GND contacts: 0.60 mm
+  diameter with a 0.30 mm finished drill.
+- Two additional 0.60/0.30 mm vias connect both Type-C shell ends between the
+  outer layers on `USB_SHIELD`. This net remains intentionally separate from
+  digital GND and is terminated by R3/C1.
+- All 72 vias are through vias from `F.Cu` to `B.Cu`; all nine copper zones
   have been refilled after placement.
 
 These are plane-access points, not completed load connections. The power
