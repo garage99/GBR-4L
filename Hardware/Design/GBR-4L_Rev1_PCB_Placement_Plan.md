@@ -37,8 +37,9 @@ clearance.
   array below its M.2 socket: 1.20 mm diameter with a 0.60 mm finished drill.
 - `+12V_PROTECTED` has a four-via 1.50/0.80 mm array and `+3V3_SYS` has a
   four-via 1.20/0.60 mm array in their respective upper power regions. A
-  second two-via 1.20/0.60 mm `+3V3_SYS` feed connects the USB hub locally.
-- The ground plane has 65 stitching and thermal vias around the board
+  second two-via 1.20/0.60 mm `+3V3_SYS` feed connects the USB hub locally,
+  with one additional local feed at its reset pull-up.
+- The ground plane has 66 stitching and thermal vias around the board
   perimeter, beside the four modem power arrays, and at both Type-C GND
   contacts: 0.60 mm
   diameter with a 0.30 mm finished drill. This count includes a dedicated via
@@ -47,7 +48,7 @@ clearance.
 - Three additional 0.60/0.30 mm vias connect both Type-C shell ends and the
   R3/C1 termination node between the outer layers on `USB_SHIELD`. This net
   remains intentionally separate from digital GND.
-- All 94 vias are through vias from `F.Cu` to `B.Cu`; all nine copper zones
+- All 98 vias are through vias from `F.Cu` to `B.Cu`; all nine copper zones
   have been refilled after placement.
 
 These are plane-access points, not completed load connections. The power
@@ -144,6 +145,11 @@ surround `U2`. Their 3.3 V branches are routed directly to the nearest hub
 power pins, and all five parts use individual GND vias. The resulting
 decoupling network is tied to the `+3V3_SYS` inner region through two local
 power vias and a 1.00 mm `F.Cu` trunk.
+
+The hub reset network (`R7`/`C6`) is placed above the right side of `U2`.
+`HUB_RESET#` uses a short `B.Cu` escape between two vias to pass the
+right-side bypass capacitors; the pull-up and timing capacitor have dedicated
+`+3V3_SYS` and GND plane vias.
 
 This is the functional anchor baseline, not the final local placement. Buck
 converter loops, hub passives, SIM protection, modem decoupling, buttons, and
