@@ -37,7 +37,7 @@ clearance.
   array below its M.2 socket: 1.20 mm diameter with a 0.60 mm finished drill.
 - `+12V_PROTECTED` has a four-via 1.50/0.80 mm array and `+3V3_SYS` has a
   four-via 1.20/0.60 mm array in their respective upper power regions.
-- The ground plane has 55 stitching and thermal vias around the board
+- The ground plane has 57 stitching and thermal vias around the board
   perimeter, beside the four modem power arrays, and at both Type-C GND
   contacts: 0.60 mm
   diameter with a 0.30 mm finished drill. This count includes a dedicated via
@@ -46,7 +46,7 @@ clearance.
 - Three additional 0.60/0.30 mm vias connect both Type-C shell ends and the
   R3/C1 termination node between the outer layers on `USB_SHIELD`. This net
   remains intentionally separate from digital GND.
-- All 82 vias are through vias from `F.Cu` to `B.Cu`; all nine copper zones
+- All 84 vias are through vias from `F.Cu` to `B.Cu`; all nine copper zones
   have been refilled after placement.
 
 These are plane-access points, not completed load connections. The power
@@ -129,6 +129,10 @@ and four modem sockets. Its 4.1 mm exposed GND pad contains a 2 x 2 array of
 0.60/0.30 mm thermal vias. These vias are open on the component side and
 tented on `B.Cu`; confirm the selected assembler accepts this via-in-pad
 construction before release.
+
+The 24 MHz crystal (`Y1`) and 12 pF C0G load capacitors (`C4`/`C5`) are placed
+immediately left of `U2`. Both oscillator traces are routed directly on
+`F.Cu`, without vias, and each load capacitor has an individual GND via.
 
 This is the functional anchor baseline, not the final local placement. Buck
 converter loops, hub passives, SIM protection, modem decoupling, buttons, and
