@@ -50,7 +50,9 @@ clearance.
   remains intentionally separate from digital GND.
 - Two 0.45/0.20 mm signal vias route `USB_VBUS_DET` from the hub to the local
   divider while avoiding the already-routed reset and decoupling area.
-- All 101 vias are through vias from `F.Cu` to `B.Cu`; all nine copper zones
+- Two additional 0.45/0.20 mm signal vias route `USB_VBUS` from the Type-C
+  entry and ESD clamp to the detector divider.
+- All 103 vias are through vias from `F.Cu` to `B.Cu`; all nine copper zones
   have been refilled after placement.
 
 These are plane-access points, not completed load connections. The power
@@ -156,8 +158,9 @@ GND return.
 The USB VBUS detector divider (`R4`/`R5`) is placed in the same USB support
 area near `U2`. Its midpoint is routed to `U2` pin 27 (`USB_VBUS_DET`) using
 two small signal vias and a short `B.Cu` segment. `R5` has a local GND return
-via. The `USB_VBUS` side of `R4` remains to be tied into the Type-C VBUS entry
-when the final upstream USB entry routing is completed.
+via. The `USB_VBUS` side of `R4` is now tied to both Type-C VBUS contacts and
+the USB ESD clamp VBUS pin through a short `F.Cu` entry trunk and a `B.Cu`
+escape to the divider.
 
 This is the functional anchor baseline, not the final local placement. Buck
 converter loops, hub passives, SIM protection, modem decoupling, buttons, and
