@@ -52,7 +52,9 @@ clearance.
   divider while avoiding the already-routed reset and decoupling area.
 - Two additional 0.45/0.20 mm signal vias route `USB_VBUS` from the Type-C
   entry and ESD clamp to the detector divider.
-- All 103 vias are through vias from `F.Cu` to `B.Cu`; all nine copper zones
+- Four additional 0.45/0.20 mm signal vias route the two Type-C CC pins to
+  their pull-down resistors while leaving the USB2 D+/D- corridor open.
+- All 107 vias are through vias from `F.Cu` to `B.Cu`; all nine copper zones
   have been refilled after placement.
 
 These are plane-access points, not completed load connections. The power
@@ -127,8 +129,9 @@ receptacle. Both parts have individual GND vias, while their `USB_SHIELD` pads
 join at a dedicated via and connect to the shell on `B.Cu`.
 
 The two 5.1 kΩ Type-C pull-downs (`R1`/`R2`) are grouped below the connector
-and each has an individual GND via. Their `USB_CC1` and `USB_CC2` sides remain
-to be routed to the receptacle after the USB entry corridor is finalized.
+and each has an individual GND via. Their `USB_CC1` and `USB_CC2` sides are
+routed to the Type-C receptacle with short `F.Cu` escapes and `B.Cu` vertical
+runs, keeping the future USB2 D+/D- routing corridor clear.
 
 The USB2514B hub (`U2`) is placed at (145 mm, 55 mm), between the Type-C entry
 and four modem sockets. Its 4.1 mm exposed GND pad contains a 2 x 2 array of
