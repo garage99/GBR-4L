@@ -39,16 +39,18 @@ clearance.
   four-via 1.20/0.60 mm array in their respective upper power regions. A
   second two-via 1.20/0.60 mm `+3V3_SYS` feed connects the USB hub locally,
   with one additional local feed at its reset pull-up.
-- The ground plane has 66 stitching and thermal vias around the board
+- The ground plane has 67 stitching and thermal vias around the board
   perimeter, beside the four modem power arrays, and at both Type-C GND
   contacts: 0.60 mm
   diameter with a 0.30 mm finished drill. This count includes a dedicated via
   and short 0.50 mm ground connection at the USB ESD clamp plus individual
-  returns for the shield termination parts.
+  returns for the shield termination parts and the USB VBUS detector divider.
 - Three additional 0.60/0.30 mm vias connect both Type-C shell ends and the
   R3/C1 termination node between the outer layers on `USB_SHIELD`. This net
   remains intentionally separate from digital GND.
-- All 98 vias are through vias from `F.Cu` to `B.Cu`; all nine copper zones
+- Two 0.45/0.20 mm signal vias route `USB_VBUS_DET` from the hub to the local
+  divider while avoiding the already-routed reset and decoupling area.
+- All 101 vias are through vias from `F.Cu` to `B.Cu`; all nine copper zones
   have been refilled after placement.
 
 These are plane-access points, not completed load connections. The power
@@ -107,7 +109,7 @@ rails should use pours where practical and must be validated thermally.
 - Final 12 V input connector, blade-fuse holder, PMOS, and inductor choices.
 - Crystal load-capacitance and package selection.
 
-The current PCB contains the layer stack, outline, mounting holes, all 184
+The current PCB contains the layer stack, outline, mounting holes, all 188
 schematic footprints, and all 287 schematic nets. Four M.2 sockets are anchored
 on a common line with 30 mm x 42 mm module envelopes reserved below them. The
 12 V input and USB Type-C receptacle are anchored at opposite board edges. All
@@ -148,8 +150,14 @@ power vias and a 1.00 mm `F.Cu` trunk.
 
 The hub reset network (`R7`/`C6`) is placed above the right side of `U2`.
 `HUB_RESET#` uses a short `B.Cu` escape between two vias to pass the
-right-side bypass capacitors; the pull-up and timing capacitor have dedicated
-`+3V3_SYS` and GND plane vias.
+decoupling area, with a local `+3V3_SYS` pull-up via and a dedicated capacitor
+GND return.
+
+The USB VBUS detector divider (`R4`/`R5`) is placed in the same USB support
+area near `U2`. Its midpoint is routed to `U2` pin 27 (`USB_VBUS_DET`) using
+two small signal vias and a short `B.Cu` segment. `R5` has a local GND return
+via. The `USB_VBUS` side of `R4` remains to be tied into the Type-C VBUS entry
+when the final upstream USB entry routing is completed.
 
 This is the functional anchor baseline, not the final local placement. Buck
 converter loops, hub passives, SIM protection, modem decoupling, buttons, and
