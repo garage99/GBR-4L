@@ -56,7 +56,9 @@ clearance.
   their pull-down resistors while leaving the USB2 D+/D- corridor open.
 - Six 0.40/0.20 mm signal vias gather the duplicated Type-C D+/D- contacts
   into the USB ESD clamp input pins on short provisional `B.Cu` escapes.
-- All 113 vias are through vias from `F.Cu` to `B.Cu`; all nine copper zones
+- Four additional 0.40/0.20 mm signal vias route the protected upstream USB2
+  pair from the ESD clamp output pins to the USB2514B upstream pins.
+- All 117 vias are through vias from `F.Cu` to `B.Cu`; all nine copper zones
   have been refilled after placement.
 
 These are plane-access points, not completed load connections. The power
@@ -128,9 +130,11 @@ USB entry corridor.
 
 The Type-C upstream D+/D- contacts are routed from `J1` to the input side of
 the ESD clamp (`U1`) using short 0.15 mm provisional `F.Cu` stubs and `B.Cu`
-gathering traces. This closes the connector-to-protection segment while
-leaving the longer `U1`-to-`U2` USB2 pair for the final impedance-controlled
-routing pass.
+gathering traces. The protected side of `U1` is also routed to `U2` pins 30
+and 31 with provisional 0.15 mm `B.Cu` pair segments and short `F.Cu` pin
+escapes. This completes the upstream USB2 electrical path from connector to
+hub, but the geometry must still be recalculated and tuned after the final
+JLCPCB stack-up is selected.
 
 The 1 MΩ / 4.7 nF shield termination (`R3`/`C1`) is placed below the Type-C
 receptacle. Both parts have individual GND vias, while their `USB_SHIELD` pads
@@ -139,7 +143,7 @@ join at a dedicated via and connect to the shell on `B.Cu`.
 The two 5.1 kΩ Type-C pull-downs (`R1`/`R2`) are grouped below the connector
 and each has an individual GND via. Their `USB_CC1` and `USB_CC2` sides are
 routed to the Type-C receptacle with short `F.Cu` escapes and `B.Cu` vertical
-runs, keeping the future hub-side USB2 routing corridor clear.
+runs.
 
 The USB2514B hub (`U2`) is placed at (145 mm, 55 mm), between the Type-C entry
 and four modem sockets. Its 4.1 mm exposed GND pad contains a 2 x 2 array of
