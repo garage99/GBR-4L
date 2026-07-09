@@ -39,12 +39,13 @@ clearance.
   four-via 1.20/0.60 mm array in their respective upper power regions. A
   second two-via 1.20/0.60 mm `+3V3_SYS` feed connects the USB hub locally,
   with one additional local feed at its reset pull-up.
-- The ground plane has 67 stitching and thermal vias around the board
+- The ground plane has 71 stitching, thermal, and local return vias around the board
   perimeter, beside the four modem power arrays, and at both Type-C GND
   contacts: 0.60 mm
   diameter with a 0.30 mm finished drill. This count includes a dedicated via
   and short 0.50 mm ground connection at the USB ESD clamp plus individual
-  returns for the shield termination parts and the USB VBUS detector divider.
+  returns for the shield termination parts, the USB VBUS detector divider, and
+  four 0.50/0.25 mm local return vias beside USB2 layer transitions.
 - Three additional 0.60/0.30 mm vias connect both Type-C shell ends and the
   R3/C1 termination node between the outer layers on `USB_SHIELD`. This net
   remains intentionally separate from digital GND.
@@ -58,7 +59,7 @@ clearance.
   into the USB ESD clamp input pins on short provisional `B.Cu` escapes.
 - Four additional 0.40/0.20 mm signal vias route the protected upstream USB2
   pair from the ESD clamp output pins to the USB2514B upstream pins.
-- All 117 vias are through vias from `F.Cu` to `B.Cu`; all nine copper zones
+- All 121 vias are through vias from `F.Cu` to `B.Cu`; all nine copper zones
   have been refilled after placement.
 
 These are plane-access points, not completed load connections. The power
@@ -134,7 +135,8 @@ gathering traces. The protected side of `U1` is also routed to `U2` pins 30
 and 31 with provisional 0.15 mm `B.Cu` pair segments and short `F.Cu` pin
 escapes. This completes the upstream USB2 electrical path from connector to
 hub, but the geometry must still be recalculated and tuned after the final
-JLCPCB stack-up is selected.
+JLCPCB stack-up is selected. Four local GND return vias are placed next to the
+connector-side and hub-side USB2 layer transitions.
 
 The 1 MΩ / 4.7 nF shield termination (`R3`/`C1`) is placed below the Type-C
 receptacle. Both parts have individual GND vias, while their `USB_SHIELD` pads
