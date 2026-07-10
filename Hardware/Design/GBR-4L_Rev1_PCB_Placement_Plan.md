@@ -59,7 +59,9 @@ clearance.
   into the USB ESD clamp input pins on short provisional `B.Cu` escapes.
 - Four additional 0.40/0.20 mm signal vias route the protected upstream USB2
   pair from the ESD clamp output pins to the USB2514B upstream pins.
-- All 121 vias are through vias from `F.Cu` to `B.Cu`; all nine copper zones
+- Four additional 0.40/0.20 mm signal vias route USB hub downstream port 1 to
+  the first M.2 modem socket (`J101`) on provisional `B.Cu` pair segments.
+- All 125 vias are through vias from `F.Cu` to `B.Cu`; all nine copper zones
   have been refilled after placement.
 
 These are plane-access points, not completed load connections. The power
@@ -146,6 +148,12 @@ The two 5.1 kΩ Type-C pull-downs (`R1`/`R2`) are grouped below the connector
 and each has an individual GND via. Their `USB_CC1` and `USB_CC2` sides are
 routed to the Type-C receptacle with short `F.Cu` escapes and `B.Cu` vertical
 runs.
+
+USB hub downstream port 1 (`USB_M1_D+`/`USB_M1_D-`) is routed from `U2` pins
+1 and 2 to `J101` pins 7 and 9. The route uses short `F.Cu` pin escapes, then
+travels on `B.Cu` along the lane above the M.2 sockets before returning to the
+connector pads. This is also provisional USB2 geometry pending final stack-up
+and length/impedance tuning.
 
 The USB2514B hub (`U2`) is placed at (145 mm, 55 mm), between the Type-C entry
 and four modem sockets. Its 4.1 mm exposed GND pad contains a 2 x 2 array of
