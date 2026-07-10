@@ -1,0 +1,16 @@
+Status,Functional_Block,Qty,Manufacturer,Manufacturer_Part_Number,Description,Package_or_Form,Selection_Notes
+SELECTED,LTE modem,4,Semtech / Sierra Wireless,EM7565,Cat-12 LTE modem,M.2 Key B 3042,Exact regional SKU and firmware must be confirmed before purchase
+SELECTED,M.2 socket,4,TE Connectivity,2199230-1,M.2 Key B socket,67-contact SMT 4.2 mm height,Project footprint captured from C-2199230 Rev B4; verify availability
+SELECTED,USB hub,1,Microchip,USB2514B-I/M2,Four-port USB 2.0 High-Speed hub controller,SQFN-36,Production device; self-powered configuration
+SELECTED,3.3 V buck regulator,5,Texas Instruments,TPS56339DDCR,3 A synchronous step-down regulator,SOT-23-THN-6,Four modem rails plus one system rail; 12 V to 3.3 V; internal compensation
+CANDIDATE,USB ESD,1,STMicroelectronics,USBLC6-2SC6,Low-capacitance USB 2.0 ESD protection,SOT-23-6,Protect upstream D+ and D-
+CANDIDATE,SIM ESD,4,STMicroelectronics,ESDA6V1-5SC6,Five-line ESD protection array,SOT-23-6,Confirm capacitance against SIM interface
+CANDIDATE,USB Type-C receptacle,1,GCT,USB4105-GF-A,USB 2.0 Type-C receptacle,16-pin SMT,Verify JLC assembly support and shell tabs
+SELECTED,nano-SIM socket,4,TE Connectivity,2452808-1,Front-entry push-pull nano-SIM socket with card detect,SMT 1.37 mm height,Project footprint captured from C-2452808 Rev C1; switch closes to C5/GND when a card is inserted
+CANDIDATE,Input TVS,1,Littelfuse,SMBJ15A,15 V unidirectional TVS,SMB,Recheck standoff voltage for selected 12 V adapter
+CANDIDATE,Input fuse,1,,5 A time-delay blade fuse,Replaceable input overcurrent protection,ATO blade holder,Freeze fuse and holder after adapter and load-step testing
+CANDIDATE,CC resistors,2,,5.1k 1%,USB Type-C Rd resistor,0603,One each on CC1 and CC2
+CANDIDATE,Hub crystal,1,,24 MHz crystal,3225,Select from USB2514B approved load parameters
+CANDIDATE,Status LED buffer,4,onsemi,MMBT3906LT1G,PNP transistor for active-low modem status,SOT-23,Verify JLCPCB assembly stock or approve equivalent
+CANDIDATE,Local control switch,8,Omron,B3U-1000P,Normally-open tactile switch,SMD,Four reset and four RF-disable controls; verify actuator height
+CANDIDATE,Modem status LED,4,,Green LED,Per-modem WWAN status indicator,0603,Select brightness and current at prototype review
